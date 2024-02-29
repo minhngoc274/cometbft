@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"math"
+	"sort"
 	"sync/atomic"
 	"time"
 
@@ -70,7 +71,8 @@ type BlockPool struct {
 	height     int64 // the lowest key in requesters.
 	// peers
 	peers         map[p2p.ID]*bpPeer
-	maxPeerHeight int64 // the biggest reported height
+	sortedPeers   []*bpPeer // sorted by curRate, highest first
+	maxPeerHeight int64     // the biggest reported height
 
 	// atomic
 	numPending int32 // number of requests pending assignment or block response
@@ -149,7 +151,14 @@ func (pool *BlockPool) removeTimedoutPeers() {
 					"minRate", fmt.Sprintf("%d KB/s", minRecvRate/1024))
 				peer.didTimeout = true
 			}
+
+			if peer.curRate != curRate {
+				peer.curRate = curRate
+				// TODO: make sure we're not calling this too often.
+				pool.sortPeers()
+			}
 		}
+
 		if peer.didTimeout {
 			pool.removePeer(peer.id)
 		}
@@ -329,6 +338,9 @@ func (pool *BlockPool) SetPeerRange(peerID p2p.ID, base int64, height int64) {
 		peer = newBPPeer(pool, peerID, base, height)
 		peer.setLogger(pool.Logger.With("peer", peerID))
 		pool.peers[peerID] = peer
+		// no need to sort because curRate is 0 at start.
+		// just add to the beginning so it's picked first by pickIncrAvailablePeer.
+		pool.sortedPeers = append([]*bpPeer{peer}, pool.sortedPeers...)
 	}
 
 	if height > pool.maxPeerHeight {
@@ -359,6 +371,12 @@ func (pool *BlockPool) removePeer(peerID p2p.ID) {
 		}
 
 		delete(pool.peers, peerID)
+		for i, p := range pool.sortedPeers {
+			if p.id == peerID {
+				pool.sortedPeers = append(pool.sortedPeers[:i], pool.sortedPeers[i+1:]...)
+				break
+			}
+		}
 
 		// Find a new peer with the biggest height and update maxPeerHeight if the
 		// peer's height was the biggest.
@@ -385,7 +403,7 @@ func (pool *BlockPool) pickIncrAvailablePeer(height int64) *bpPeer {
 	pool.mtx.Lock()
 	defer pool.mtx.Unlock()
 
-	for _, peer := range pool.peers {
+	for _, peer := range pool.sortedPeers {
 		if peer.didTimeout {
 			pool.removePeer(peer.id)
 			continue
@@ -399,7 +417,17 @@ func (pool *BlockPool) pickIncrAvailablePeer(height int64) *bpPeer {
 		peer.incrPending()
 		return peer
 	}
+
 	return nil
+}
+
+// Sort peers by curRate, highest first.
+//
+// CONTRACT: pool.mtx must be locked.
+func (pool *BlockPool) sortPeers() {
+	sort.Slice(pool.sortedPeers, func(i, j int) bool {
+		return pool.sortedPeers[i].curRate > pool.sortedPeers[j].curRate
+	})
 }
 
 func (pool *BlockPool) makeNextRequester() {
@@ -465,6 +493,7 @@ func (pool *BlockPool) debug() string {
 
 type bpPeer struct {
 	didTimeout  bool
+	curRate     int64
 	numPending  int32
 	height      int64
 	base        int64
