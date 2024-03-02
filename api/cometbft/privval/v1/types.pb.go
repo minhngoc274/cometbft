@@ -5,22 +5,19 @@ package v1
 
 import (
 	fmt "fmt"
-	io "io"
-	math "math"
-	math_bits "math/bits"
-
 	v1 "github.com/cometbft/cometbft/api/cometbft/crypto/v1"
 	v11 "github.com/cometbft/cometbft/api/cometbft/types/v1"
 	_ "github.com/cosmos/gogoproto/gogoproto"
 	proto "github.com/cosmos/gogoproto/proto"
+	io "io"
+	math "math"
+	math_bits "math/bits"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var (
-	_ = proto.Marshal
-	_ = fmt.Errorf
-	_ = math.Inf
-)
+var _ = proto.Marshal
+var _ = fmt.Errorf
+var _ = math.Inf
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -40,11 +37,9 @@ func (*RemoteSignerError) ProtoMessage()    {}
 func (*RemoteSignerError) Descriptor() ([]byte, []int) {
 	return fileDescriptor_00b969dcac92905e, []int{0}
 }
-
 func (m *RemoteSignerError) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *RemoteSignerError) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_RemoteSignerError.Marshal(b, m, deterministic)
@@ -57,15 +52,12 @@ func (m *RemoteSignerError) XXX_Marshal(b []byte, deterministic bool) ([]byte, e
 		return b[:n], nil
 	}
 }
-
 func (m *RemoteSignerError) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_RemoteSignerError.Merge(m, src)
 }
-
 func (m *RemoteSignerError) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *RemoteSignerError) XXX_DiscardUnknown() {
 	xxx_messageInfo_RemoteSignerError.DiscardUnknown(m)
 }
@@ -97,11 +89,9 @@ func (*PubKeyRequest) ProtoMessage()    {}
 func (*PubKeyRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_00b969dcac92905e, []int{1}
 }
-
 func (m *PubKeyRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *PubKeyRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_PubKeyRequest.Marshal(b, m, deterministic)
@@ -114,15 +104,12 @@ func (m *PubKeyRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error
 		return b[:n], nil
 	}
 }
-
 func (m *PubKeyRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_PubKeyRequest.Merge(m, src)
 }
-
 func (m *PubKeyRequest) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *PubKeyRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_PubKeyRequest.DiscardUnknown(m)
 }
@@ -148,11 +135,9 @@ func (*PubKeyResponse) ProtoMessage()    {}
 func (*PubKeyResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_00b969dcac92905e, []int{2}
 }
-
 func (m *PubKeyResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *PubKeyResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_PubKeyResponse.Marshal(b, m, deterministic)
@@ -165,15 +150,12 @@ func (m *PubKeyResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, erro
 		return b[:n], nil
 	}
 }
-
 func (m *PubKeyResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_PubKeyResponse.Merge(m, src)
 }
-
 func (m *PubKeyResponse) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *PubKeyResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_PubKeyResponse.DiscardUnknown(m)
 }
@@ -207,11 +189,9 @@ func (*SignVoteRequest) ProtoMessage()    {}
 func (*SignVoteRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_00b969dcac92905e, []int{3}
 }
-
 func (m *SignVoteRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *SignVoteRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_SignVoteRequest.Marshal(b, m, deterministic)
@@ -224,15 +204,12 @@ func (m *SignVoteRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, err
 		return b[:n], nil
 	}
 }
-
 func (m *SignVoteRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SignVoteRequest.Merge(m, src)
 }
-
 func (m *SignVoteRequest) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *SignVoteRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_SignVoteRequest.DiscardUnknown(m)
 }
@@ -272,11 +249,9 @@ func (*SignedVoteResponse) ProtoMessage()    {}
 func (*SignedVoteResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_00b969dcac92905e, []int{4}
 }
-
 func (m *SignedVoteResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *SignedVoteResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_SignedVoteResponse.Marshal(b, m, deterministic)
@@ -289,15 +264,12 @@ func (m *SignedVoteResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, 
 		return b[:n], nil
 	}
 }
-
 func (m *SignedVoteResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SignedVoteResponse.Merge(m, src)
 }
-
 func (m *SignedVoteResponse) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *SignedVoteResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_SignedVoteResponse.DiscardUnknown(m)
 }
@@ -330,11 +302,9 @@ func (*SignProposalRequest) ProtoMessage()    {}
 func (*SignProposalRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_00b969dcac92905e, []int{5}
 }
-
 func (m *SignProposalRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *SignProposalRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_SignProposalRequest.Marshal(b, m, deterministic)
@@ -347,15 +317,12 @@ func (m *SignProposalRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte,
 		return b[:n], nil
 	}
 }
-
 func (m *SignProposalRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SignProposalRequest.Merge(m, src)
 }
-
 func (m *SignProposalRequest) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *SignProposalRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_SignProposalRequest.DiscardUnknown(m)
 }
@@ -388,11 +355,9 @@ func (*SignedProposalResponse) ProtoMessage()    {}
 func (*SignedProposalResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_00b969dcac92905e, []int{6}
 }
-
 func (m *SignedProposalResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *SignedProposalResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_SignedProposalResponse.Marshal(b, m, deterministic)
@@ -405,15 +370,12 @@ func (m *SignedProposalResponse) XXX_Marshal(b []byte, deterministic bool) ([]by
 		return b[:n], nil
 	}
 }
-
 func (m *SignedProposalResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SignedProposalResponse.Merge(m, src)
 }
-
 func (m *SignedProposalResponse) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *SignedProposalResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_SignedProposalResponse.DiscardUnknown(m)
 }
@@ -435,7 +397,8 @@ func (m *SignedProposalResponse) GetError() *RemoteSignerError {
 }
 
 // PingRequest is a request to confirm that the connection is alive.
-type PingRequest struct{}
+type PingRequest struct {
+}
 
 func (m *PingRequest) Reset()         { *m = PingRequest{} }
 func (m *PingRequest) String() string { return proto.CompactTextString(m) }
@@ -443,11 +406,9 @@ func (*PingRequest) ProtoMessage()    {}
 func (*PingRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_00b969dcac92905e, []int{7}
 }
-
 func (m *PingRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *PingRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_PingRequest.Marshal(b, m, deterministic)
@@ -460,15 +421,12 @@ func (m *PingRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) 
 		return b[:n], nil
 	}
 }
-
 func (m *PingRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_PingRequest.Merge(m, src)
 }
-
 func (m *PingRequest) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *PingRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_PingRequest.DiscardUnknown(m)
 }
@@ -476,7 +434,8 @@ func (m *PingRequest) XXX_DiscardUnknown() {
 var xxx_messageInfo_PingRequest proto.InternalMessageInfo
 
 // PingResponse is a response to confirm that the connection is alive.
-type PingResponse struct{}
+type PingResponse struct {
+}
 
 func (m *PingResponse) Reset()         { *m = PingResponse{} }
 func (m *PingResponse) String() string { return proto.CompactTextString(m) }
@@ -484,11 +443,9 @@ func (*PingResponse) ProtoMessage()    {}
 func (*PingResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_00b969dcac92905e, []int{8}
 }
-
 func (m *PingResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *PingResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_PingResponse.Marshal(b, m, deterministic)
@@ -501,15 +458,12 @@ func (m *PingResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
 		return b[:n], nil
 	}
 }
-
 func (m *PingResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_PingResponse.Merge(m, src)
 }
-
 func (m *PingResponse) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *PingResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_PingResponse.DiscardUnknown(m)
 }
@@ -538,11 +492,9 @@ func (*Message) ProtoMessage()    {}
 func (*Message) Descriptor() ([]byte, []int) {
 	return fileDescriptor_00b969dcac92905e, []int{9}
 }
-
 func (m *Message) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *Message) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_Message.Marshal(b, m, deterministic)
@@ -555,15 +507,12 @@ func (m *Message) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 		return b[:n], nil
 	}
 }
-
 func (m *Message) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Message.Merge(m, src)
 }
-
 func (m *Message) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *Message) XXX_DiscardUnknown() {
 	xxx_messageInfo_Message.DiscardUnknown(m)
 }
@@ -1142,7 +1091,6 @@ func (m *Message_PubKeyRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	}
 	return len(dAtA) - i, nil
 }
-
 func (m *Message_PubKeyResponse) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
@@ -1164,7 +1112,6 @@ func (m *Message_PubKeyResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) 
 	}
 	return len(dAtA) - i, nil
 }
-
 func (m *Message_SignVoteRequest) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
@@ -1186,7 +1133,6 @@ func (m *Message_SignVoteRequest) MarshalToSizedBuffer(dAtA []byte) (int, error)
 	}
 	return len(dAtA) - i, nil
 }
-
 func (m *Message_SignedVoteResponse) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
@@ -1208,7 +1154,6 @@ func (m *Message_SignedVoteResponse) MarshalToSizedBuffer(dAtA []byte) (int, err
 	}
 	return len(dAtA) - i, nil
 }
-
 func (m *Message_SignProposalRequest) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
@@ -1230,7 +1175,6 @@ func (m *Message_SignProposalRequest) MarshalToSizedBuffer(dAtA []byte) (int, er
 	}
 	return len(dAtA) - i, nil
 }
-
 func (m *Message_SignedProposalResponse) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
@@ -1252,7 +1196,6 @@ func (m *Message_SignedProposalResponse) MarshalToSizedBuffer(dAtA []byte) (int,
 	}
 	return len(dAtA) - i, nil
 }
-
 func (m *Message_PingRequest) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
@@ -1274,7 +1217,6 @@ func (m *Message_PingRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	}
 	return len(dAtA) - i, nil
 }
-
 func (m *Message_PingResponse) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
@@ -1296,7 +1238,6 @@ func (m *Message_PingResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	}
 	return len(dAtA) - i, nil
 }
-
 func encodeVarintTypes(dAtA []byte, offset int, v uint64) int {
 	offset -= sovTypes(v)
 	base := offset
@@ -1308,7 +1249,6 @@ func encodeVarintTypes(dAtA []byte, offset int, v uint64) int {
 	dAtA[offset] = uint8(v)
 	return base
 }
-
 func (m *RemoteSignerError) Size() (n int) {
 	if m == nil {
 		return 0
@@ -1462,7 +1402,6 @@ func (m *Message_PubKeyRequest) Size() (n int) {
 	}
 	return n
 }
-
 func (m *Message_PubKeyResponse) Size() (n int) {
 	if m == nil {
 		return 0
@@ -1475,7 +1414,6 @@ func (m *Message_PubKeyResponse) Size() (n int) {
 	}
 	return n
 }
-
 func (m *Message_SignVoteRequest) Size() (n int) {
 	if m == nil {
 		return 0
@@ -1488,7 +1426,6 @@ func (m *Message_SignVoteRequest) Size() (n int) {
 	}
 	return n
 }
-
 func (m *Message_SignedVoteResponse) Size() (n int) {
 	if m == nil {
 		return 0
@@ -1501,7 +1438,6 @@ func (m *Message_SignedVoteResponse) Size() (n int) {
 	}
 	return n
 }
-
 func (m *Message_SignProposalRequest) Size() (n int) {
 	if m == nil {
 		return 0
@@ -1514,7 +1450,6 @@ func (m *Message_SignProposalRequest) Size() (n int) {
 	}
 	return n
 }
-
 func (m *Message_SignedProposalResponse) Size() (n int) {
 	if m == nil {
 		return 0
@@ -1527,7 +1462,6 @@ func (m *Message_SignedProposalResponse) Size() (n int) {
 	}
 	return n
 }
-
 func (m *Message_PingRequest) Size() (n int) {
 	if m == nil {
 		return 0
@@ -1540,7 +1474,6 @@ func (m *Message_PingRequest) Size() (n int) {
 	}
 	return n
 }
-
 func (m *Message_PingResponse) Size() (n int) {
 	if m == nil {
 		return 0
@@ -1557,11 +1490,9 @@ func (m *Message_PingResponse) Size() (n int) {
 func sovTypes(x uint64) (n int) {
 	return (math_bits.Len64(x|1) + 6) / 7
 }
-
 func sozTypes(x uint64) (n int) {
 	return sovTypes(uint64((x << 1) ^ uint64((int64(x) >> 63))))
 }
-
 func (m *RemoteSignerError) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -1663,7 +1594,6 @@ func (m *RemoteSignerError) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *PubKeyRequest) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -1746,7 +1676,6 @@ func (m *PubKeyRequest) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *PubKeyResponse) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -1866,7 +1795,6 @@ func (m *PubKeyResponse) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *SignVoteRequest) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -2005,7 +1933,6 @@ func (m *SignVoteRequest) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *SignedVoteResponse) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -2125,7 +2052,6 @@ func (m *SignedVoteResponse) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *SignProposalRequest) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -2244,7 +2170,6 @@ func (m *SignProposalRequest) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *SignedProposalResponse) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -2364,7 +2289,6 @@ func (m *SignedProposalResponse) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *PingRequest) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -2415,7 +2339,6 @@ func (m *PingRequest) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *PingResponse) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -2466,7 +2389,6 @@ func (m *PingResponse) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *Message) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -2797,7 +2719,6 @@ func (m *Message) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func skipTypes(dAtA []byte) (n int, err error) {
 	l := len(dAtA)
 	iNdEx := 0
