@@ -433,6 +433,7 @@ func SignAndCheckVote(
 		return false, &ErrVoteExtensionInvalid{ExtSignature: v.ExtensionSignature}
 	}
 
+	vote.ExtensionSignature = nil
 	if extensionsEnabled {
 		isNil := vote.BlockID.IsNil()
 		extSignature := (len(v.ExtensionSignature) > 0)
